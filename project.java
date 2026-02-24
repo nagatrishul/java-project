@@ -27,3 +27,28 @@ public class project{
         }
     }
 }
+
+    // Main Method
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Monthly Income: ");
+        double income = sc.nextDouble();
+
+        System.out.print("Enter Total Basic Expenses: ");
+        double totalExpenses = sc.nextDouble();
+
+        // Creating object
+        project vm = new project();
+
+        // Handling Rainy Month
+        totalExpenses = vm.handleRainyMonth(sc, totalExpenses);
+
+        // Validating Expenses
+        vm.validateExpenses(income, totalExpenses);
+
+        System.out.println("Final Total Expenses: " + totalExpenses);
+
+        sc.close();
+    }
